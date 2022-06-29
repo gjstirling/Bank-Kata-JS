@@ -6,7 +6,18 @@ describe('Transaction', () => {
     })
 
     it('Creates a deposit', ()=>{
-        expect(transaction.addDeposit(100.00)).toEqual({credit: 100.00, date: "29/06/2022"});
+        const assertion = transaction.addDeposit(100.00)
+        expect(assertion).toEqual({credit: 100.00, date: "date"});
     });
+
+    it('requires an amount to create transaction', () => {
+        const assertion = transaction.addDeposit()
+        expect(assertion).toEqual({error: "argument invalid"});
+    })
+
+    it('requires an number to create transaction', () => {
+        const assertion = transaction.addDeposit("not a number")
+        expect(assertion).toEqual({error: "argument invalid"});
+    })
 
 });
