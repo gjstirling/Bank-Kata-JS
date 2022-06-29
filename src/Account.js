@@ -1,7 +1,7 @@
 class Account {
 
     constructor() {
-
+        
     }
 
     deposit(amount){
