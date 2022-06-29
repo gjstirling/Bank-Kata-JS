@@ -5,8 +5,9 @@ describe('Account', () => {
         account = new Account
     })
 
-    it('Accepts a numerical value', ()=>{
-        expect(account.deposit(100.00)).not.toThrow();
+    it('Calls the addDeposit method', ()=>{
+        const assertion = account.deposit(100.00)
+        expect(assertion).toEqual({debit: "100.00", date: "29/06/2022"})
     });
 
 });
