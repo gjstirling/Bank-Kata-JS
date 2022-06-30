@@ -23,6 +23,10 @@ class Transaction {
     return transaction;
   }
 
+  getTransactions() {
+    return this.transactionHistory;
+  }
+
   #checkFunds(amount) {
     let balance = 0
     for (let i = 0; i< this.transactionHistory.length; i++) {

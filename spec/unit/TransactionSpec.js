@@ -43,6 +43,7 @@ describe("Transaction", () => {
 
     it("Blocks transaction if limited funds", () => {
       transaction.addDeposit(10.00)
+      console.log(transaction.transactionHistory)
       const assertion = transaction.addWithdrawel(50.00);
       expect(assertion).toEqual({error: "Account credit too low, transaction cancelled"});
     });
@@ -51,5 +52,26 @@ describe("Transaction", () => {
       jasmine.clock().uninstall();
     });
   });
+
+  describe(".getTransactions", () => {
+
+    beforeEach(() => {
+      transaction = new Transaction();
+      jasmine.clock().install();
+      var baseTime = new Date(2022, 5, 28);
+      jasmine.clock().mockDate(baseTime);
+    });
+
+    it("returns a list of transactions", () => {
+      transaction.addDeposit(100.00)
+      transaction.addWithdrawel(50.00)
+      expect(transaction.getTransactions()).toEqual(transaction.transactionHistory);
+    });
+
+    afterEach(function () {
+      jasmine.clock().uninstall();
+    });
+
+  })
 
 });

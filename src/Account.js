@@ -1,7 +1,8 @@
 class Account {
 
-    constructor(transaction = new Transaction) {
+    constructor(transaction = new Transaction, statement = new Statement) {
         this.transaction = transaction
+        this.statement = statement
     }
 
     deposit(amount){
@@ -10,6 +11,11 @@ class Account {
 
     withdraw(amount){
         this.transaction.addWithdrawel(amount)
+    }
+
+    printStatement(){
+        const transactions = this.transaction.getTransactions()
+        this.statement.print(transactions)
     }
 
 }
