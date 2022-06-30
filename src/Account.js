@@ -8,4 +8,8 @@ class Account {
         this.transaction.addDeposit(amount)
     }
 
+    withdraw(amount){
+        this.transaction.addWithdrawel(amount)
+    }
+
 }

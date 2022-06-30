@@ -1,11 +1,24 @@
 class Transaction {
+
+  constructor() {
+    this.transactionHistory = []
+  }
+
   addDeposit(amount) {
     if (this.#argumentError(amount)) {
       return { error: "argument invalid" };
     }
-    let currentDate = new Date();
-    currentDate = this.#formatDate(currentDate);
-    return { credit: amount, date: currentDate };
+    const currentDate = this.#formatDate(new Date());
+    const transaction =  { credit: amount, date: currentDate }
+    this.transactionHistory.push(transaction)
+    return transaction;
+  }
+
+  addWithdrawel(amount) {
+    const currentDate = this.#formatDate(new Date());
+    const transaction =  { debit: amount, date: currentDate }
+    this.transactionHistory.push(transaction)
+    return transaction;
   }
 
   #argumentError(value) {
