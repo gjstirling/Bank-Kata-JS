@@ -1,13 +1,11 @@
+describe("Account", () => {
+  beforeEach(() => {});
 
-describe('Account', () => {
-
-    beforeEach(() => {
-        account = new Account
-    })
-
-    it('Calls the addDeposit method', ()=>{
-        const assertion = account.deposit(100.00)
-        expect(assertion).toEqual({debit: "100.00", date: "29/06/2022"})
-    });
-
+  it("Calls the addDeposit method", () => {
+    let mockObject = jasmine.createSpyObj('mockObject', ['addDeposit']);
+    let account = new Account(mockObject)
+    account.deposit(100.00)
+    expect(mockObject.addDeposit).toHaveBeenCalledWith(100.00);
+  });
 });
+

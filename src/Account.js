@@ -1,11 +1,11 @@
 class Account {
 
-    constructor() {
-        
+    constructor(transaction = new Transaction) {
+        this.transaction = transaction
     }
 
     deposit(amount){
-        return {debit: "100.00", date: "29/06/2022"};
+        this.transaction.addDeposit(amount)
     }
 
 }
