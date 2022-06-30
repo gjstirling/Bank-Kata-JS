@@ -31,14 +31,20 @@ describe("Transaction", () => {
     beforeEach(() => {
       transaction = new Transaction();
       jasmine.clock().install();
+      var baseTime = new Date(2022, 5, 28);
+      jasmine.clock().mockDate(baseTime);
     });
 
     it("Creates a withdrawel transaction", () => {
-      var baseTime = new Date(2022, 5, 28);
-      jasmine.clock().mockDate(baseTime);
       transaction.addDeposit(100.00)
       const assertion = transaction.addWithdrawel(50.00);
       expect(assertion).toEqual({ debit: 50.00, date: "28/06/2022" });
+    });
+
+    it("Blocks transaction if limited funds", () => {
+      transaction.addDeposit(10.00)
+      const assertion = transaction.addWithdrawel(50.00);
+      expect(assertion).toEqual({error: "Account credit too low, transaction cancelled"});
     });
 
     afterEach(function () {
