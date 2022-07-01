@@ -6,19 +6,19 @@ How to use program
 
 ### Installation 
 
-What tech is needed ?  Node to run locally, how to install repo.  
+Clone this repo into a directory.   
 
 ### Testing
 
-how to run unit tests through either a browser or locally on VS code
+Tests can be run by copying the SpecRunner.html path and pasting it into a browser. This will load a Jasmine spec runner shown below: 
+
+![Jasmine tests Image](https://github.com/gjstirling/Bank-Kata-JS/blob/main/public/Domain%20model.png)
 
 ## Approach 
 
 From the specification it is clear the user has three possible interactions with the program. These are deposit, withdraw and printing a bank statement. Due to this I choose to model my interface as an account class with dependencies on some lower level classes to manage creating/storing transactions and creating statements. 
 
 The transaction class is used to create and store transactions while the statement class is used to format those transactions. The account class provides the link between the classes and the user. 
-
-
 
 ### Domain model
 ![Domain Model Image](https://github.com/gjstirling/Bank-Kata-JS/blob/main/public/Domain%20model.png)
