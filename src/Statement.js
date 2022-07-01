@@ -14,8 +14,14 @@ class Statement {
         transactionStrings.push(`${transactions[i].date} || || ${(transaction).toFixed(2)} || ${(balance).toFixed(2)}\n`);
       }
     }
-    transactionStrings = transactionStrings.reverse()
-    transactionStrings.unshift("date || credit || debit || balance\n")
-    return transactionStrings.join("");
+    transactionStrings = this.#addHeader(transactionStrings.reverse())
+    return transactionStrings;
+  }
+
+  #addHeader (str) {
+    str.unshift("date || credit || debit || balance\n") 
+    return str.join("");
   }
 }
+
+module.exports = Statement;

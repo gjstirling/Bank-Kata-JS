@@ -62,3 +62,5 @@ class Transaction {
     return balance;
   }
 }
+
+module.exports = Transaction;

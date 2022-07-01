@@ -1,3 +1,6 @@
+const Statement = require("./Statement.js");
+const Transaction = require("./Transaction");
+
 class Account {
 
     constructor(transaction = new Transaction, statement = new Statement) {
@@ -20,3 +23,5 @@ class Account {
     }
 
 }
+
+module.exports = Account;
