@@ -14,9 +14,14 @@ how to run unit tests through either a browser or locally on VS code
 
 ## Approach 
 
-description goes here and class diagramming
+From the specification it is clear the user has three possible interactions with the program. These are deposit, withdraw and printing a bank statement. Due to this I choose to model my interface as an account class with dependencies on some lower level classes to manage creating/storing transactions and creating statements. 
 
- 
+The transaction class is used to create and store transactions while the statement class is used to format those transactions. The account class provides the link between the classes and the user. 
+
+
+
+### Domain model
+![Domain Model Image](https://github.com/gjstirling/Bank-Kata-JS/blob/main/public/Domain%20model.png)
 
 # Specification 
 
