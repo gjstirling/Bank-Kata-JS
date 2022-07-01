@@ -1,12 +1,15 @@
 # Bank Kata JS 
 
-## Usage
-
-How to use program 
-
 ### Installation 
 
-Clone this repo into a directory.   
+Clone this repo into a directory of your choice. You will also need an up to date version of node to run this locally through the terminal.   
+
+### Usage
+
+Open using a code editor, from the root folder use the following command to run an example usage of the program: 
+```
+node src/main.js 
+```
 
 ### Testing
 
