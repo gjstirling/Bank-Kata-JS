@@ -22,14 +22,7 @@ class Transaction {
   }
 
   #checkFunds(amount) {
-    let balance = 0;
-    for (let i = 0; i < this.transactionHistory.length; i++) {
-      if (this.transactionHistory[i].credit) {
-        balance += this.transactionHistory[i].credit * 100;
-      } else {
-        balance -= this.transactionHistory[i].debit * 100;
-      }
-    }
+    let balance = this.#checkBalance()
     balance -= amount * 100;
     return balance < 0;
   }
@@ -55,5 +48,17 @@ class Transaction {
     }
     this.transactionHistory.push(transaction);
     return transaction;
+  }
+
+  #checkBalance() {
+    let balance = 0
+    for (let i = 0; i < this.transactionHistory.length; i++) {
+      if (this.transactionHistory[i].credit) {
+        balance += this.transactionHistory[i].credit * 100;
+      } else {
+        balance -= this.transactionHistory[i].debit * 100;
+      }
+    }
+    return balance;
   }
 }
