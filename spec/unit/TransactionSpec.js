@@ -43,7 +43,6 @@ describe("Transaction", () => {
 
     it("Blocks transaction if limited funds", () => {
       transaction.addDeposit(10.00)
-      console.log(transaction.transactionHistory)
       const assertion = transaction.addWithdrawel(50.00);
       expect(assertion).toEqual({error: "Account credit too low, transaction cancelled"});
     });
