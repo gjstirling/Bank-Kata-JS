@@ -1,14 +1,24 @@
-# Bank tech test
+# Bank Kata JS 
 
-Today, you'll practice doing a tech test.
+## Usage
 
-For most tech tests, you'll essentially have unlimited time.  This practice session is about producing the best code you can when there is a minimal time pressure.
+How to use program 
 
-You'll get to practice your OO design and TDD skills.
+### Installation 
 
-You'll work alone, and you'll also review your own code so you can practice reflecting on and improving your own work.
+What tech is needed ?  Node to run locally, how to install repo.  
 
-## Specification
+### Testing
+
+how to run unit tests through either a browser or locally on VS code
+
+## Approach 
+
+description goes here and class diagramming
+
+ 
+
+# Specification 
 
 ### Requirements
 
