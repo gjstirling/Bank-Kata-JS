@@ -12,7 +12,7 @@ Clone this repo into a directory.
 
 Tests can be run by copying the SpecRunner.html path and pasting it into a browser. This will load a Jasmine spec runner shown below: 
 
-![Jasmine tests Image](https://github.com/gjstirling/Bank-Kata-JS/blob/main/public/Domain%20model.png)
+![Jasmine tests Image](https://github.com/gjstirling/Bank-Kata-JS/blob/main/public/tests.png)
 
 ## Approach 
 
