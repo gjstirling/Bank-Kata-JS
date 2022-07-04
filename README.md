@@ -14,6 +14,23 @@ Open using a code editor, from the root folder use the following command to run 
 node src/main.js 
 ```
 
+Or interact with directly through the node REPL: 
+
+```
+node
+const Account = require('./src/Account.js')
+let account = new Account
+``` 
+
+On the instance of the account class you can then make the below calls:
+```
+account.deposit(100)
+account.withdraw(50)
+account.printStatement()
+```
+
+### Testing
+
 Tests can be run by entering the command: 
 ```
 npm test 
