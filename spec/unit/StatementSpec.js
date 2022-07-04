@@ -1,3 +1,5 @@
+const Statement = require('../../src/Statement')
+
 describe("Statement", () => {
   describe(".print", () => {
     it("returns the header", () => {

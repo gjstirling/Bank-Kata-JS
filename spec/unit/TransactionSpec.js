@@ -1,3 +1,5 @@
+const Transaction = require('../../src/Transaction')
+
 describe("Transaction", () => {
   describe(".addDeposit", () => {
     beforeEach(() => {
