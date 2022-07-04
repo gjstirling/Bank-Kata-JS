@@ -3,7 +3,9 @@
 ### Installation 
 
 Clone this repo into a directory of your choice. You will also need an up to date version of node to run this locally through the terminal. In the root directory run the follwoing command to install dependencies: 
-```npm install```
+```
+npm install
+```
 
 ### Usage
 
