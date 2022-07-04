@@ -1,8 +1,5 @@
 class Statement {
-  constructor() {
-    this.balance = 0;
-  }
-
+ 
   print(transactions) {
     transactions = this.#stringifyTransactions(transactions)
     transactions = this.#addHeader(transactions)
