@@ -1,28 +1,32 @@
 class Statement {
-
   constructor() {
-    this.balance = 0 
+    this.balance = 0;
   }
 
   print(transactions) {
-    let balance = 0;
-    let transactionStrings = [];
-    for (let i = 0; i < transactions.length; i++) {
-      if (transactions[i].credit) {
-        balance += transactions[i].credit
-        transactionStrings.push(`${transactions[i].date} || ${(transactions[i].credit).toFixed(2)} || || ${(balance).toFixed(2)}\n`);
-      } else {
-        balance -= transactions[i].debit;
-        transactionStrings.push(`${transactions[i].date} || || ${(transactions[i].debit).toFixed(2)} || ${(balance).toFixed(2)}\n`);
-      }
-    }
-    transactionStrings = this.#addHeader(transactionStrings.reverse())
-    return transactionStrings;
+    let transactionsStr = this.#stringifyTransactions(transactions)
+    transactionsStr = this.#addHeader(transactionsStr)
+    return transactionsStr;
   }
 
-  #addHeader (str) {
-    str.unshift("date || credit || debit || balance\n") 
+  #addHeader(str) {
+    str.unshift("date || credit || debit || balance\n");
     return str.join("");
+  }
+
+  #stringifyTransactions(transactions) {
+    let balance = 0
+    const stringTransactions = []
+    transactions.map((transaction)=>{
+      if(transaction.credit) {
+        balance += transaction.credit
+        stringTransactions.push(`${transaction.date} || ${(transaction.credit).toFixed(2)} || || ${(balance).toFixed(2)}\n`)
+      } else {
+        balance -= transaction.debit
+        stringTransactions.push(`${transaction.date} || || ${(transaction.debit).toFixed(2)} || ${(balance).toFixed(2)}\n`)
+      }
+    })
+    return stringTransactions.reverse()
   }
 }
 
