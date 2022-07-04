@@ -4,9 +4,9 @@ class Statement {
   }
 
   print(transactions) {
-    let transactionsStr = this.#stringifyTransactions(transactions)
-    transactionsStr = this.#addHeader(transactionsStr)
-    return transactionsStr;
+    transactions = this.#stringifyTransactions(transactions)
+    transactions = this.#addHeader(transactions)
+    return transactions;
   }
 
   #addHeader(str) {
@@ -16,17 +16,17 @@ class Statement {
 
   #stringifyTransactions(transactions) {
     let balance = 0
-    const stringTransactions = []
+    const outputStrings = []
     transactions.map((transaction)=>{
       if(transaction.credit) {
         balance += transaction.credit
-        stringTransactions.push(`${transaction.date} || ${(transaction.credit).toFixed(2)} || || ${(balance).toFixed(2)}\n`)
+        outputStrings.push(`${transaction.date} || ${(transaction.credit).toFixed(2)} || || ${(balance).toFixed(2)}\n`)
       } else {
         balance -= transaction.debit
-        stringTransactions.push(`${transaction.date} || || ${(transaction.debit).toFixed(2)} || ${(balance).toFixed(2)}\n`)
+        outputStrings.push(`${transaction.date} || || ${(transaction.debit).toFixed(2)} || ${(balance).toFixed(2)}\n`)
       }
     })
-    return stringTransactions.reverse()
+    return outputStrings.reverse()
   }
 }
 
