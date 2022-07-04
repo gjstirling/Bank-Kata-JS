@@ -2,7 +2,8 @@
 
 ### Installation 
 
-Clone this repo into a directory of your choice. You will also need an up to date version of node to run this locally through the terminal.   
+Clone this repo into a directory of your choice. You will also need an up to date version of node to run this locally through the terminal. In the root directory run the follwoing command to install dependencies: 
+```npm install```
 
 ### Usage
 
@@ -11,11 +12,10 @@ Open using a code editor, from the root folder use the following command to run 
 node src/main.js 
 ```
 
-### Testing
-
-Tests can be run by copying the SpecRunner.html path and pasting it into a browser. This will load a Jasmine spec runner shown below: 
-
-![Jasmine tests Image](https://github.com/gjstirling/Bank-Kata-JS/blob/main/public/tests.png)
+Tests can be run by entering the command: 
+```
+npm test 
+```
 
 ## Approach 
 
