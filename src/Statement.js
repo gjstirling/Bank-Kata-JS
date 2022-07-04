@@ -1,17 +1,19 @@
 class Statement {
+
+  constructor() {
+    this.balance = 0 
+  }
+
   print(transactions) {
     let balance = 0;
-    let transaction = "";
     let transactionStrings = [];
     for (let i = 0; i < transactions.length; i++) {
       if (transactions[i].credit) {
-        transaction = transactions[i].credit
-        balance += transaction
-        transactionStrings.push(`${transactions[i].date} || ${(transaction).toFixed(2)} || || ${(balance).toFixed(2)}\n`);
+        balance += transactions[i].credit
+        transactionStrings.push(`${transactions[i].date} || ${(transactions[i].credit).toFixed(2)} || || ${(balance).toFixed(2)}\n`);
       } else {
-        transaction = transactions[i].debit
-        balance -= transaction;
-        transactionStrings.push(`${transactions[i].date} || || ${(transaction).toFixed(2)} || ${(balance).toFixed(2)}\n`);
+        balance -= transactions[i].debit;
+        transactionStrings.push(`${transactions[i].date} || || ${(transactions[i].debit).toFixed(2)} || ${(balance).toFixed(2)}\n`);
       }
     }
     transactionStrings = this.#addHeader(transactionStrings.reverse())
