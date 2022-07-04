@@ -18,7 +18,6 @@ class Account {
 
     printStatement(){
         const transactions = this.transaction.getTransactions()
-        console.log(this.statement.print(transactions));
         return this.statement.print(transactions);
     }
 
