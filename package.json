@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/gjstirling/Bank-Kata-JS/issues"
   },
-  "homepage": "https://github.com/gjstirling/Bank-Kata-JS#readme"
+  "homepage": "https://github.com/gjstirling/Bank-Kata-JS#readme",
+  "devDependencies": {
+    "jasmine": "^4.2.1"
+  }
 }
